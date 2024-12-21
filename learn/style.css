@@ -1,0 +1,81 @@
+html {
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div {
+    background-color: rgba(30, 46, 59, 0.055);
+    padding: 2%;
+}
+
+p {
+    margin: 0;
+    padding: 6px;
+}
+
+
+article_title, article_subtitle {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+article_title {
+    display: block;
+    font-size: xx-large;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+img, difficulty {
+    display: block;
+}
+
+difficulty {
+    margin: 15px;
+}
+
+difficulty::before {
+    content: "Сложность темы: ";
+    font-weight: bolder;
+}
+
+dhard::before {
+    content: "😡 Сложная";
+    color: rgb(235, 24, 24);
+}
+
+dmedium::before {
+    content: "😐 Умеренная";
+    color: rgb(235, 136, 24);
+}
+
+deasy::before {
+    content: "😃 Легкая";
+    color: rgb(0, 197, 10);
+}
+
+article_subtitle {
+    display: block;
+    font-size: x-large;
+}
+
+noun {
+    text-decoration: underline;
+}
+verb {
+    border-bottom: 3px double;
+}
+
+contents {
+    display: block;
+    background-color: rgba(30, 46, 59, 0.1);
+    padding: 5px;
+    border-radius: 10px;
+}

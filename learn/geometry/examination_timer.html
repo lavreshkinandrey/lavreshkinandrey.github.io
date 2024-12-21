@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отсчёт до экзамена</title>
+    <link rel="stylesheet" href="../blacked.css">
+</head>
+<body>
+    <center>
+        <div id="visual">
+        <span id="special">Время до беспощадной расправы с хорошими четвертными оценками:</span>
+        <h1 id="t-8255"></h1>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h2>На повторение</h2>
+    </center>
+    <div id="visual"><ul>
+        <li><b>Смежные и вертикальные углы</b> - с. 22</li>
+        <li><b>Первый признак равенства треугольников</b> - с. 29</li>
+        <li><b>Медиана, биссектриса, высота треугольника</b> - с. 34</li>
+        <li><b>Второй признак равенства треугольников</b> - с. 38</li>
+        <li><b>Третий признак равенства треугольников</b> - с. 39</li>
+        <li><b>Окружность: диаметр, радиус, хорда, дуга.<br> Касательная к окружности, вписанная и описанная окружность.</b> - с. 41, 100</li>
+        <li><b>Накрест лежащие, односторонние, соответственные углы</b> - с. 54</li>
+        <li><b>Остроугольный, прямоугольный, тупоугольный треугольники</b> - с. 70, 75</li>
+        <li><b>Параллелограмм, трапеция</b> - с. 124</li>
+        <li><b>Прямоугольник, ромб, квадрат</b> - с. 131</li>
+        <li><b>Площади фигур</b> - с. 139</li>
+        <li><b>Теорема Пифагора</b> - с. 152</li>
+    </ul></div>
+    <br>
+    <center>
+        <div>Удачи в этой самой кровопролитной контрольной за вторую четверть.</div>
+    </center>
+    <div id="omaga_poco">
+        <span id="copyr">(nc) Андрей Лаврешкин, 2024</span>
+    </div>
+    
+    <script defer>
+        const operator = document.getElementById("t-8255");
+
+        var end = new Date('12/23/2024 08:41 AM');
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+                clearInterval(timer);
+                operator.innerHTML = 'СМЕ-Е-ЕРТЬ';
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            operator.innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+        }
+
+        showRemaining()
+        timer = setInterval(showRemaining, 1000);
+    </script>
+</body>
+</html>

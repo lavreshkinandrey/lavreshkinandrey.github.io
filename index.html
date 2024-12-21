@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переадресация</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center>
+    <span id="error" style="color: rgb(255, 96, 96); font-weight: bolder;"></span>
+    <script>
+        const redirect_pairs = {
+            "1": "https://google.com/"
+        }
+
+        let node = document.location.hash.substring(1);
+        const error = document.getElementById("error");
+
+        if (node == "0") {
+            error.innerHTML = "Произошла ошибка: Node is equal to 0."
+            console.error("Redirect pair matching failed (node " + node + "). Node is 0.")
+        } else if (node == null) {
+            error.innerHTML = "Произошла ошибка: Node is null."
+            console.error("Redirect pair matching failed (node " + node + "). Node is null.")
+        } else if (node.trim() == "") {
+            error.innerHTML = "Произошла ошибка: Node is empty."
+            console.error("Redirect pair matching failed (node " + node + "). Node is empty.")
+        } else if (!(redirect_pairs.hasOwnProperty(node))) {
+            error.innerHTML = "Произошла ошибка: No node pair named " + node + " is present."
+            console.error("Redirect pair matching failed (node " + node + "). No node pair found.")
+        } else {
+            document.location.href = redirect_pairs[node];
+            console.log("Redirect pair for node " + node + " found: " + redirect_pairs[parseInt(node)])
+        }
+    </script>
+</body>
+</html>

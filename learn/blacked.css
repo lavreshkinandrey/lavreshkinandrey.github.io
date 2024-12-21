@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+html {
+    background-color: rgb(32, 0, 0);
+    color: rgb(255, 126, 126);
+    font-family: "JetBrains Mono", serif;
+    padding-top: 6%;
+}
+
+h1 {
+    padding: 0;
+    margin: 2%;
+    font-size: 10vw;
+}
+
+h2 {
+    font-size: 3.5vw;
+}
+
+span#special {
+    font-size: 2.2vw;
+}
+
+div#visual {
+    background-color: rgba(255, 255, 255, 0.089);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+ul {
+    font-size: 2.19vw;
+}
+
+span#copyr {
+    color: rgba(143, 58, 58, 0.801);
+    font-size: 1.8vw;
+}
+
+#omaga_poco {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
