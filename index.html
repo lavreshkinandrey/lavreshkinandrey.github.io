@@ -15,7 +15,8 @@
             "2": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer"
         }
 
-        let node = document.location.hash.substring(1);
+        const params = new URLSearchParams(window.location.search);
+        let node = urlParams.get('n');
         const error = document.getElementById("error");
 
         if (node == "0") {
