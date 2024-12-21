@@ -26,6 +26,8 @@ div#visual {
     padding: 1%;
     border-radius: 20px;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul {
