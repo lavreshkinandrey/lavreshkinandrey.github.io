@@ -14,31 +14,36 @@
             //"2": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer",
             //"3": "https://lavreshkinandrey.github.io/armatura/armatura_awards_2024",
 
-            "42042": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer"
+            "42042": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer",
                 
             "5001": "https://newuroki.net/",
             "5002": "https://newuroki.net/konspekty-urokov-dlya-uchitelya/osnovy-bezopasnosti-i-zashhity-rodiny/bytovye-travmy-konspekt-uroka/"
         }
 
-        const params = new URLSearchParams(window.location.search);
-        let node = params.get('n');
         const error = document.getElementById("error");
-
-        if (node == "0") {
-            error.innerHTML = "Произошла ошибка: Node is equal to 0."
-            console.error("Redirect pair matching failed (node " + node + "). Node is 0.")
-        } else if (node == null) {
-            error.innerHTML = "Произошла ошибка: Node is null."
-            console.error("Redirect pair matching failed (node " + node + "). Node is null.")
-        } else if (node.trim() == "") {
-            error.innerHTML = "Произошла ошибка: Node is empty."
-            console.error("Redirect pair matching failed (node " + node + "). Node is empty.")
-        } else if (!(redirect_pairs.hasOwnProperty(node))) {
-            error.innerHTML = "Произошла ошибка: No node pair named " + node + " is present."
-            console.error("Redirect pair matching failed (node " + node + "). No node pair found.")
-        } else {
-            document.location.href = redirect_pairs[node];
-            console.log("Redirect pair for node " + node + " found: " + redirect_pairs[parseInt(node)])
+        try {
+            const params = new URLSearchParams(window.location.search);
+            let node = params.get('n');
+    
+            if (node == "0") {
+                error.innerHTML = "Произошла ошибка: Node is equal to 0."
+                console.error("Redirect pair matching failed (node " + node + "). Node is 0.")
+            } else if (node == null) {
+                error.innerHTML = "Произошла ошибка: Node is null."
+                console.error("Redirect pair matching failed (node " + node + "). Node is null.")
+            } else if (node.trim() == "") {
+                error.innerHTML = "Произошла ошибка: Node is empty."
+                console.error("Redirect pair matching failed (node " + node + "). Node is empty.")
+            } else if (!(redirect_pairs.hasOwnProperty(node))) {
+                error.innerHTML = "Произошла ошибка: No node pair named " + node + " is present."
+                console.error("Redirect pair matching failed (node " + node + "). No node pair found.")
+            } else {
+                document.location.href = redirect_pairs[node];
+                console.log("Redirect pair for node " + node + " found: " + redirect_pairs[parseInt(node)])
+            }
+        } catch (error) {
+            error.innerHTML = "Произошла внутренняя ошибка: " + error;
+            console.error(error);
         }
     </script>
 </body>
