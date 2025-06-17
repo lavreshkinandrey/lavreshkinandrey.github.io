@@ -1,22 +1,99 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+
 <head>
-  <link rel="stylesheet" href="index.css">
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Стиховик</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Переадресация</title>
+
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-  <h1>
-    Стиховик
-  </h1>
-  <p>
-    Сборник всех моих (наших) стихов
-  </p>
-  <div>
-    <div class="-ix13b">
-      <a href="school/index.html"><h3>Последний сентябрь</h3></a>
-    </div>
-  </div>
+
+    <center>
+
+    <span id="error" style="color: rgb(255, 96, 96); font-weight: bolder;"></span>
+
+    <script>
+
+        const redirect_pairs = {
+
+            //"2": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer",
+
+            //"3": "https://lavreshkinandrey.github.io/armatura/armatura_awards_2024",
+
+
+
+            "42042": "https://lavreshkinandrey.github.io/learn/geometry/examination_timer",
+
+                
+
+            "5001": "https://newuroki.net/",
+
+            "5002": "https://newuroki.net/konspekty-urokov-dlya-uchitelya/osnovy-bezopasnosti-i-zashhity-rodiny/bytovye-travmy-konspekt-uroka/"
+
+        }
+
+
+
+        const error = document.getElementById("error");
+
+        try {
+
+            const params = new URLSearchParams(window.location.search);
+
+            let node = params.get('n');
+
+    
+
+            if (node == "0") {
+
+                error.innerHTML = "Произошла ошибка: Node is equal to 0."
+
+                console.error("Redirect pair matching failed (node " + node + "). Node is 0.")
+
+            } else if (node == null) {
+
+                error.innerHTML = "Произошла ошибка: Node is null."
+
+                console.error("Redirect pair matching failed (node " + node + "). Node is null.")
+
+            } else if (node.trim() == "") {
+
+                error.innerHTML = "Произошла ошибка: Node is empty."
+
+                console.error("Redirect pair matching failed (node " + node + "). Node is empty.")
+
+            } else if (!(redirect_pairs.hasOwnProperty(node))) {
+
+                error.innerHTML = "Произошла ошибка: No node pair named " + node + " is present."
+
+                console.error("Redirect pair matching failed (node " + node + "). No node pair found.")
+
+            } else {
+
+                document.location.href = redirect_pairs[node];
+
+                console.log("Redirect pair for node " + node + " found: " + redirect_pairs[parseInt(node)])
+
+            }
+
+        } catch (error) {
+
+            error.innerHTML = "Произошла внутренняя ошибка: " + error;
+
+            console.error(error);
+
+        }
+
+    </script>
+
 </body>
+
 </html>
