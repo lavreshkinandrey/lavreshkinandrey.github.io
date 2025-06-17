@@ -1,0 +1,63 @@
+  html  {
+  				 background-color: #eee8aa;  }
+  body  {  text-align: center;
+     padding-bottom: 150px;  }
+  html, body {  overflow-x: hidden;
+  				 max-width: 100%;  }
+  pre  {  position: relative;
+  				 font-family: serif;
+  				 text-align: left;
+  				 width: 70%;
+  				 white-space: pre-wrap;
+  				 left: 50%;
+     transform: translateX(-50%)}
+  button {
+  				 display: block;
+  }
+  .-ixblur  {  width: 100%;
+     height: 100%;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     z-index: -1;
+     filter: blur(5px);  }
+  .-ixdial-cont  {
+  				 width: 75%;
+  				 background-color: #e0d880;
+  				 padding: 10px;
+  				 margin-left: auto;
+  				 margin-right: auto;
+  				 border-radius: 10px;
+  }
+  #-ixdial-e {
+  				 color: red;
+  				 padding: 1px;
+  				 margin: 0;
+  }
+  .-ix13b  {  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e0d880;
+  				 border-radius: 10px;
+    width: 70%;
+  				 height: 50px;
+   margin-bottom: 10px;}
+  .-ix13b > a > h3  {
+  				 position: absolute;
+  				 left: 0;
+  				 right: 0;
+  				 height: 100%;
+  				 font-size: 18px;
+  				 display: inline;
+    text-decoration: none;
+    color: black;  }
+  .-ix13b > a  {
+  				 height: 100%;
+  				 width: 100%;
+  				 text-decoration: none;
+  }
+  .-ix13b > span {
+  				 margin-inline: 0;
+  				 position: absolute;
+  				 right: 0;
+  }
