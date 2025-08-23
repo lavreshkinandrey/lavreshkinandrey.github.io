@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>онастасія ждуля</title>
+    <style x0="@" y1="@">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        html {
+            background-color: #252a30;
+            color: #dce7fa;
+            font-family: "Inter", serif;
+            padding-top: 6%;
+            font-weight: 400;
+        }
+
+        h1 {
+            padding: 0;
+            margin: 2%;
+            font-size: 60px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        span#special {
+            font-size: 18px;
+        }
+
+        div#visual {
+            background-color: rgba(255, 255, 255, 0.089);
+            padding: 1%;
+            border-radius: 20px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 100px;
+            width: 90%;
+        }
+
+        ul {
+            font-size: 19px;
+        }
+
+        span#copyr {
+            color: rgba(143, 58, 58, 0.801);
+        }
+
+        #omaga_poco {
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="visual">
+            <br>
+            <span id="special">Анастасия ждуля</span>
+            <h1 id="t-8255"></h1>
+            <br>
+        </div>
+
+       
+    </center>
+    <br>
+    
+    <script defer>
+        const operator = document.getElementById("t-8255");
+
+        // Прошлый экзамен (2 четверть)
+        //    var end = new Date('12/23/2024 08:41 AM');
+        // Следующий экзамен (4 четверть)
+        //    var end = new Date('05/05/2025 08:41 AM');
+        // Анастасія ждуля 
+        var end = new Date("08/24/2045 00:01 AM");
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var _year = _day * 365;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+                clearInterval(timer);
+                operator.innerHTML = 'Дождалась...';
+                return;
+            }
+            
+            var years = Math.floor(distance / _year);
+            /*var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);*/
+            var days = Math.floor((distance % _year) / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+                
+            var year_literal = "л";
+            if (years < 4)
+                year_literal = "г";
+            //const r = "<br nextline/>";
+                const r = " ";
+            operator.innerHTML = years + year_literal + r + days + "д" + r + hours + "ч" +r+ + minutes + "м"+r+ + seconds + "с";
+        }
+
+        showRemaining();
+        timer = setInterval(showRemaining, 1000);
+    </script>
+</body>
+</html>
